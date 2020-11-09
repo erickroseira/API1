@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace API1.WebApi
 {
@@ -21,6 +16,8 @@ namespace API1.WebApi
 				.ConfigureWebHostDefaults(webBuilder =>
 				{
 					webBuilder.UseStartup<Startup>();
-				});
+				}).UseSerilog((hostingContext, loggerConfig) =>
+                    loggerConfig.ReadFrom.Configuration(hostingContext.Configuration)
+                );
 	}
 }

@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API1.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:API1.WebApi.Controllers.JurosController">
+            <summary>
+            Recebe todos os requests relacionados a Juros.
+            </summary>
+        </member>
+        <member name="M:API1.WebApi.Controllers.JurosController.#ctor(API1.WebApi.Services.ILoggingService{API1.WebApi.Controllers.JurosController})">
+            <summary>
+            Construtor do JurosController.
+            </summary>
+            <param name="loggingService">Instância do Serviço de Logging.</param>
+        </member>
+        <member name="M:API1.WebApi.Controllers.JurosController.GetTaxaJuros">
+            <summary>
+            Retorna a Taxa de Juros atual,
+            </summary>
+            <returns>A taxa de juros atual.</returns>
+        </member>
+        <member name="T:API1.WebApi.Helpers.ResponseHelper">
+            <summary>
+            Classe Helper para a construção de respostas da API.
+            </summary>
+        </member>
+        <member name="M:API1.WebApi.Helpers.ResponseHelper.CreateResponse(System.String,System.Net.HttpStatusCode,System.Collections.Generic.List{API1.WebApi.Models.Response.Error})">
+            <summary>
+             Método genérico para criar a resposta da API.
+            </summary>
+            <param name="message">O response da API.</param>
+            <param name="httpStatusCode">O HttpStatusCode da API.</param>
+            <param name="errors">Os <see cref="T:API1.WebApi.Models.Response.Error"/>s relacionados ao response da API.</param>
+            <returns>A resposta da API.</returns>
+        </member>
+        <member name="M:API1.WebApi.Helpers.ResponseHelper.CreateResponse``1(System.String,System.Net.HttpStatusCode,System.Collections.Generic.List{API1.WebApi.Models.Response.Error},``0)">
+            <summary>
+            Método genérico para criar a resposta da API com contéudo.
+            </summary>
+            <typeparam name="T">O tipo da resposta da API.</typeparam>
+            <param name="message">O response da API.</param>
+            <param name="httpStatusCode">O HttpStatusCode da API.</param>
+            <param name="errors">Os <see cref="T:API1.WebApi.Models.Response.Error"/>s relacionados ao response da API.</param>
+            <param name="entity">O tipo/entidade a ser serializado com resposta da API.</param>
+            <returns>A resposta da API.</returns>
+        </member>
+        <member name="T:API1.WebApi.Models.Juros">
+            <summary>
+            Classe que representa o Juros.
+            </summary>
+        </member>
+        <member name="P:API1.WebApi.Models.Juros.Taxa">
+            <summary>
+            Representa a Taxa de Juros.
+            </summary>
+        </member>
+        <member name="T:API1.WebApi.Models.Response.Error">
+            <summary>
+            Representação de uma resposta de erro da API.
+            </summary>
+        </member>
+        <member name="P:API1.WebApi.Models.Response.Error.Mensagem">
+            <summary>
+            Mensagem de erro.
+            </summary>
+        </member>
+        <member name="T:API1.WebApi.Models.Response.Response`1">
+            <summary>
+            Classe Wrapper que representa a resposta da API com o conteúdo.
+            </summary>
+            <typeparam name="T">O tipo genérico T que será incluído no conteúdo da resposta.</typeparam>
+        </member>
+        <member name="P:API1.WebApi.Models.Response.Response`1.Conteudo">
+            <summary>
+            O conteúdo do response.
+            </summary>
+        </member>
+        <member name="T:API1.WebApi.Models.Response.ResponseStatus">
+            <summary>
+            Wrapper class para a resposta da API.
+            </summary>
+        </member>
+        <member name="P:API1.WebApi.Models.Response.ResponseStatus.Status">
+            <summary>
+            Status do response.
+            </summary>
+        </member>
+        <member name="T:API1.WebApi.Models.Response.Status">
+            <summary>
+            Representação do status do response.
+            </summary>
+        </member>
+        <member name="P:API1.WebApi.Models.Response.Status.StatusCode">
+            <summary>
+            O Http StatusCode da requisição.
+            </summary>
+        </member>
+        <member name="P:API1.WebApi.Models.Response.Status.Mensagem">
+            <summary>
+            Mensagem genérica sobre o status da requisição.
+            </summary>
+        </member>
+        <member name="P:API1.WebApi.Models.Response.Status.Erros">
+            <summary>
+            Erros associados ao request.
+            </summary>
+        </member>
+        <member name="T:API1.WebApi.Services.ILoggingService`1">
+            <summary>
+            Serviço de Logging para o projeto.
+            </summary>
+        </member>
+        <member name="M:API1.WebApi.Services.ILoggingService`1.LogInfo(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            Loga a nível de informação a mensagem passada como parâmetro.
+            </summary>
+            <param name="message">A mensagem a ser logada.</param>
+            <param name="memberName">Nome do método que acionou o logger.</param>
+            <param name="sourceFilePath">Caminho do arquivo que acionou o log. </param>
+            <param name="sourceLineNumber">Número da linha da arquivo (fonte) que acionou o logger.</param>
+        </member>
+        <member name="M:API1.WebApi.Services.ILoggingService`1.LogError(System.String,System.Exception,System.String,System.String,System.Int32)">
+            <summary>
+            Loga a nível de erro a mensagem passada como parâmetro e a exceção.
+            </summary>
+            <param name="message">A mensagem a ser logada.</param>
+            <param name="exception">A exceção a ser logada.</param>
+            <param name="memberName">Nome do método que acionou o logger.</param>
+            <param name="sourceFilePath">Caminho do arquivo que acionou o log. </param>
+            <param name="sourceLineNumber">Número da linha da arquivo (fonte) que acionou o logger.</param>
+        </member>
+        <member name="T:API1.WebApi.Services.LoggingService`1">
+            <summary>
+            Implementação de <see cref="T:API1.WebApi.Services.ILoggingService`1"/> 
+            </summary>
+        </member>
+        <member name="M:API1.WebApi.Services.LoggingService`1.#ctor(Microsoft.Extensions.Logging.ILogger{`0})">
+            <summary>
+            Contrutor do serviço de logger.
+            </summary>
+            <param name="logger">Instância do logger.</param>
+        </member>
+        <member name="M:API1.WebApi.Services.LoggingService`1.LogInfo(System.String,System.String,System.String,System.Int32)">
+            <inheritdoc cref="M:API1.WebApi.Services.ILoggingService`1.LogInfo(System.String,System.String,System.String,System.Int32)"/>
+        </member>
+        <member name="M:API1.WebApi.Services.LoggingService`1.LogError(System.String,System.Exception,System.String,System.String,System.Int32)">
+            <inheritdoc cref="M:API1.WebApi.Services.ILoggingService`1.LogError(System.String,System.Exception,System.String,System.String,System.Int32)"/>
+        </member>
+        <member name="M:API1.WebApi.Services.LoggingService`1.AddDefaultLogContextProperties(System.String,System.String,System.Int32)">
+            <summary>
+            Adiciona Propriedades default comum a todos os logs.
+            </summary>
+            <param name="memberName">Nome do método que acionou o logger.</param>
+            <param name="sourceFilePath">Caminho do arquivo que acionou o log. </param>
+            <param name="sourceLineNumber">Número da linha da arquivo (fonte) que acionou o logger.</param>
+        </member>
+        <member name="M:API1.WebApi.Services.LoggingService`1.AdicionaPropriedadeLogContext(System.String,System.Object)">
+            <summary>
+            Adiciona propriedade ao LogContext que posteriormente será mostrada no Log.
+            </summary>
+            <param name="propertyName">Propriedade a ser adicionada.</param>
+            <param name="value">Valor da propriedade.</param>
+        </member>
+    </members>
+</doc>
