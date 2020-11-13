@@ -9,5 +9,5 @@ As tecnologias usadas para construir o projeto
     - C#
 	- Asp.Net Core
 	- Docker
-	- Serilog (*para logging*)
-	- Swagger (*para documentação*)
+	- Serilog (para logging)
+	- Swagger (para documentação)
