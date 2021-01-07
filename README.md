@@ -11,3 +11,6 @@ As tecnologias usadas para construir o projeto
 	- Docker
 	- Serilog (para logging)
 	- Swagger (para documentação)
+	
+	
+![fluxo](./410.svg)
