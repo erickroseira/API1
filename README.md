@@ -13,4 +13,4 @@ As tecnologias usadas para construir o projeto
 	- Swagger (para documentação)
 	
 	
-![fluxo](./410.svg)
+![fluxo](./410.svg?sanatize=true)
